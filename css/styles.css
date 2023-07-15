@@ -1,0 +1,323 @@
+body {
+  background-color: rgb(190, 181, 181);
+}
+
+.mountain {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 333px solid transparent;
+  border-right: 366px solid transparent;
+}
+
+.mountain:nth-child(1) {
+  border-bottom: 344px solid rgb(158, 142, 142);
+  right: 10%;
+  z-index: 1;
+  filter: drop-shadow(0 0 6px #aaa);
+}
+
+.mountain:nth-child(2) {
+  border-bottom: 550px solid rgb(138, 132, 132);
+  right: 20%;
+  filter: drop-shadow(0 0 6px #aaa);
+}
+
+.mountain:nth-child(3) {
+  border-bottom: 440px solid rgb(71, 65, 65);
+  right: 30%;
+  z-index: 2;
+  filter: drop-shadow(3 3 9px #c5aaaa);
+}
+.green {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 17px;
+  background-color: #10af0a;
+}
+
+.sun {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(yellow, orange);
+  border-radius: 50%;
+  position: absolute;
+  /* left: -100px; */
+  top: 40%;
+  transform: translateY(-60%);
+  animation-name: sunrise;
+  animation-duration: 19s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes sunrise {
+  0% {
+    left: -100px;
+    top: 70%;
+    transform: translateY(-50%);
+  }
+  25% {
+    left: calc(100% + 100px);
+    top: 40%;
+    transform: translateY(-50%) translateY(-10px);
+  }
+  50% {
+    left: calc(100% + 100px);
+    top: 80%;
+    transform: translateY(-50%) translateY(10px);
+  }
+  75% {
+    left: calc(100% + 100px);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  100% {
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.animation-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 66%;
+}
+
+.bg-sky {
+  background: url("/images/cloud-02.png");
+  background-position: 0 0;
+  background-repeat: repeat;
+  animation: animated-sky 10s linear infinite;
+  width: 100%;
+  height: 700px;
+}
+@keyframes animated-sky {
+  from {
+    background-position: 800px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.wrapper {
+  height: 740px;
+  width: 300px;
+  position: relative;
+  margin: 20px;
+  z-index: 3;
+}
+.wrapper .plant {
+  height: 150px;
+  width: 6px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 90px;
+  margin: auto;
+  background: #30862d;
+  z-index: 1;
+  transform-origin: center bottom;
+  animation: lean 3s 0.5s infinite;
+}
+.wrapper .plant .leaf__one {
+  height: 30px;
+  width: 30px;
+  background: #30862d;
+  position: relative;
+  top: 10px;
+  left: 6px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  transform: rotateZ(-67.5deg);
+  z-index: -2;
+}
+.wrapper .plant .leaf__two {
+  height: 26px;
+  width: 26px;
+  background: #30862d;
+  position: relative;
+  top: 12px;
+  right: 26px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  transform: rotateZ(67.5deg);
+}
+.wrapper .plant .leaf__three {
+  height: 24px;
+  width: 24px;
+  background: #30862d;
+  position: relative;
+  top: 22px;
+  left: 6px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  transform: rotateZ(-67.5deg);
+}
+.wrapper .plant .flower {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: -80px;
+  left: -40px;
+  animation: rotate 3s 0.5s infinite;
+}
+.wrapper .plant .flower::before {
+  content: "";
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: -30px;
+  left: 20px;
+  background: #c2000a;
+  border-radius: 100%;
+  z-index: -1;
+  box-shadow: -37px 15px #c2000a, -47px 54px #c2000a, -26px 89px #c2000a,
+    15px 93px #c2000a, 43px 63px #c2000a, 36px 21px #c2000a;
+}
+.wrapper .plant .flower .head {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  border-radius: 100%;
+  background: #e8ad17;
+  box-shadow: 0 0 3px #333;
+  z-index: 10;
+}
+.wrapper .plant .flower .head .face {
+  height: 26.6666666667px;
+  width: 26.6666666667px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  margin: auto;
+  border: 4px transparent solid;
+  border-bottom: 4px black solid;
+  border-right: 4px black solid;
+  border-radius: 100%;
+  transform: rotate(45deg);
+  z-index: 10;
+  box-sizing: content-box;
+}
+.wrapper .plant .flower .head .face::before,
+.wrapper .plant .flower .head .face::after {
+  content: "";
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: -10px;
+  background: black;
+  border-radius: 100%;
+}
+.wrapper .plant .flower .head .face::before {
+  top: 8px;
+  left: -16px;
+}
+.wrapper .plant .flower .head .face::after {
+  top: -16px;
+  right: 8px;
+}
+.wrapper .pot {
+  height: 80px;
+  width: 60px;
+  background: #4d2319;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  margin: auto;
+}
+.wrapper .pot .top {
+  height: 20px;
+  width: 120px;
+  position: absolute;
+  left: -30px;
+  background: #431f16;
+  z-index: 2;
+}
+.wrapper .pot .top::after {
+  content: "";
+  height: 14px;
+  width: 120px;
+  position: absolute;
+  top: -8px;
+  left: 0;
+  border: 0;
+  border-top: 14px #220f0b solid;
+  border-radius: 100%;
+}
+.wrapper .pot::before,
+.wrapper .pot::after {
+  content: "";
+  position: absolute;
+  border-color: #4d2319;
+  border-top-width: 40px;
+  border-right-width: 15px;
+  border-bottom-width: 40px;
+  border-left-width: 15px;
+  border-style: solid;
+  border-bottom-color: transparent;
+}
+.wrapper .pot::before {
+  left: -30px;
+  border-left-color: transparent;
+}
+.wrapper .pot::after {
+  right: -30px;
+  border-right-color: transparent;
+}
+@keyframes lean {
+  0% {
+    transform: rotate(0deg);
+  }
+  12.5% {
+    transform: rotate(-22.5deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  62.5% {
+    transform: rotate(22.5deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  12.5% {
+    transform: rotate(22.5deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  62.5% {
+    transform: rotate(-22.5deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
